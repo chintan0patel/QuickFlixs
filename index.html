@@ -1,119 +1,140 @@
-<html lang="en"> <head> <meta charset="UTF-8" /> <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <title>FlixFox App Page</title> <script src="https://cdn.tailwindcss.com"></script> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" /> <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" /> <style> body { font-family: "Roboto", sans-serif; } </style> </head> <body class="bg-white text-gray-800 px-4 py-6 max-w-md mx-auto"> <!-- App Header --> <div class="flex items-start space-x-4"> <img src="https://techops.co.in/wp-content/uploads/2025/05/Quickflix-Logo-scaled.jpg" alt="App icon showing a stylized film strip" class="w-16 h-16 rounded-lg" /> <div> <h1 class="text-lg sm:text-xl font-semibold leading-snug"> QuickFlix Short Drama & Series </h1> <p class="text-green-700 text-bl">QuickFlix Entertainment</p> <p class="text-gray-500 text-xs">In-app purchases</p> </div> </div>
-
-<!-- Stats -->
-<div class="flex justify-between text-center text-sm text-gray-700 mt-4">
-  <div>
-    <p class="font-semibold">4.7 ★</p>
-    <p class="text-xs sm:text-sm">35.7K reviews</p>
-  </div>
-  <div>
-    <p class="font-semibold">5M+</p>
-    <p class="text-xs sm:text-sm">Downloads</p>
-  </div>
-  <div>
-    <i class="fas fa-award text-lg"></i>
-    <p class="text-xs sm:text-sm">Editor's Choice</p>
-  </div>
-</div>
-
-<!-- Install Button -->
-<div class="mt-4">
-  <a
-    href="https://techops.co.in/wp-content/uploads/2025/05/quickflix-2.2.apk"
-    download
-    class="block text-center w-full bg-emerald-600 text-white py-2 rounded-md font-medium text-sm sm:text-base"
-  >
-    Install
-  </a>
-</div>
-
-<!-- Device Info -->
-<div class="flex items-center space-x-2 mt-3 text-sm text-gray-500">
-  <i class="fas fa-tablet-alt"></i>
-  <span>This app is available for some of your devices</span>
-</div>
-
-<!-- Screenshots -->
-<div class="mt-6 overflow-x-auto">
-  <div class="flex space-x-3 w-max">
-    <img
-      src="https://cdn.pixabay.com/photo/2025/05/06/06/35/icon-9581860_1280.jpg"
-      alt="Screenshot 1"
-      class="rounded-md flex-shrink-0 w-[100px] h-[200px] cursor-pointer"
-      onclick="openModal(this.src)"
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FlixFox App Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     />
-    <img
-      src="https://cdn.pixabay.com/photo/2025/05/06/06/35/app-9581863_1280.jpg"
-      alt="Screenshot 2"
-      class="rounded-md flex-shrink-0 w-[100px] h-[200px] cursor-pointer"
-      onclick="openModal(this.src)"
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
     />
-    <img
-      src="https://cdn.pixabay.com/photo/2025/05/06/06/35/app-9581857_1280.jpg"
-      alt="Screenshot 3"
-      class="rounded-md flex-shrink-0 w-[100px] h-[200px] cursor-pointer"
-      onclick="openModal(this.src)"
-    />
-    <img
-      src="https://cdn.pixabay.com/photo/2025/05/06/06/35/app-9581861_1280.jpg"
-      alt="Screenshot 4"
-      class="rounded-md flex-shrink-0 w-[100px] h-[200px] cursor-pointer"
-      onclick="openModal(this.src)"
-    />
-    <img
-      src="https://cdn.pixabay.com/photo/2025/05/06/06/35/smartphone-9581859_1280.jpg"
-      alt="Screenshot 5"
-      class="rounded-md flex-shrink-0 w-[100px] h-[200px] cursor-pointer"
-      onclick="openModal(this.src)"
-    />
-    <img
-      src="https://cdn.pixabay.com/photo/2025/05/06/06/35/app-9581862_1280.jpg"
-      alt="Screenshot 6"
-      class="rounded-md flex-shrink-0 w-[100px] h-[200px] cursor-pointer"
-      onclick="openModal(this.src)"
-    />
-  </div>
-</div>
+    <style>
+      body {
+        font-family: "Roboto", sans-serif;
+      }
+    </style>
 
-<!-- Modal Viewer -->
-<div
-  id="imageModal"
-  class="fixed inset-0 bg-black bg-opacity-80 z-50 hidden flex items-center justify-center"
->
-  <div class="relative max-w-full max-h-full">
-    <img
-      id="modalImage"
-      src=""
-      alt="Expanded screenshot"
-      class="max-w-[90vw] max-h-[90vh] rounded-lg"
-    />
-    <button
-      onclick="closeModal()"
-      class="absolute top-2 right-2 text-white text-2xl font-bold"
-    >
-      &times;
-    </button>
-  </div>
-</div>
+    <!-- ✅ Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-XXXXXXXXXX");
+    </script>
 
-<script>
-  function openModal(src) {
-    document.getElementById("modalImage").src = src;
-    document.getElementById("imageModal").classList.remove("hidden");
-  }
+    <!-- ✅ Facebook Pixel -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src='https://connect.facebook.net/en_US/fbevents.js';
+      s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script');
+      fbq('init', '1251423449890011');
+      fbq('track', 'PageView');
+    </script>
+    <noscript>
+      <img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"/>
+    </noscript>
+  </head>
 
-  function closeModal() {
-    document.getElementById("imageModal").classList.add("hidden");
-  }
+  <body class="bg-white text-gray-800 px-4 py-6 max-w-md mx-auto">
 
-  document
-    .getElementById("imageModal")
-    .addEventListener("click", function (e) {
-      if (e.target === this) closeModal();
-    });
-</script>
+    <!-- App Header -->
+    <div class="flex items-start space-x-4">
+      <img
+        src="https://techops.co.in/wp-content/uploads/2025/05/Quickflix-Logo-scaled.jpg"
+        alt="App icon showing a stylized film strip"
+        class="w-16 h-16 rounded-lg"
+      />
+      <div>
+        <h1 class="text-lg sm:text-xl font-semibold leading-snug">
+          QuickFlix Short Drama & Series
+        </h1>
+        <p class="text-green-700 text-sm">QuickFlix Entertainment</p>
+        <p class="text-gray-500 text-xs">In-app purchases</p>
+      </div>
+    </div>
 
-<!-- About Section -->
+    <!-- Stats -->
+    <div class="flex justify-between text-center text-sm text-gray-700 mt-4">
+      <div>
+        <p class="font-semibold">4.7 ★</p>
+        <p class="text-xs sm:text-sm">35.7K reviews</p>
+      </div>
+      <div>
+        <p class="font-semibold">5M+</p>
+        <p class="text-xs sm:text-sm">Downloads</p>
+      </div>
+      <div>
+        <i class="fas fa-award text-lg"></i>
+        <p class="text-xs sm:text-sm">Editor's Choice</p>
+      </div>
+    </div>
+
+    <!-- Install Button -->
+    <div class="mt-4">
+      <a
+        href="https://techops.co.in/wp-content/uploads/2025/05/quickflix-2.2.apk"
+        download
+        onclick="fbq('trackCustom', 'InstallClick');"
+        class="block text-center w-full bg-emerald-600 text-white py-2 rounded-md font-medium text-sm sm:text-base"
+      >
+        Install
+      </a>
+    </div>
+
+    <!-- Device Info -->
+    <div class="flex items-center space-x-2 mt-3 text-sm text-gray-500">
+      <i class="fas fa-tablet-alt"></i>
+      <span>This app is available for some of your devices</span>
+    </div>
+
+    <!-- Screenshots -->
+    <div class="mt-6 overflow-x-auto">
+      <div class="flex space-x-3 w-max">
+        <img src="https://cdn.pixabay.com/photo/2025/05/06/06/35/icon-9581860_1280.jpg" alt="Screenshot 1" class="rounded-md w-[100px] h-[200px] cursor-pointer" onclick="openModal(this.src)" />
+        <img src="https://cdn.pixabay.com/photo/2025/05/06/06/35/app-9581863_1280.jpg" alt="Screenshot 2" class="rounded-md w-[100px] h-[200px] cursor-pointer" onclick="openModal(this.src)" />
+        <img src="https://cdn.pixabay.com/photo/2025/05/06/06/35/app-9581857_1280.jpg" alt="Screenshot 3" class="rounded-md w-[100px] h-[200px] cursor-pointer" onclick="openModal(this.src)" />
+        <img src="https://cdn.pixabay.com/photo/2025/05/06/06/35/app-9581861_1280.jpg" alt="Screenshot 4" class="rounded-md w-[100px] h-[200px] cursor-pointer" onclick="openModal(this.src)" />
+        <img src="https://cdn.pixabay.com/photo/2025/05/06/06/35/smartphone-9581859_1280.jpg" alt="Screenshot 5" class="rounded-md w-[100px] h-[200px] cursor-pointer" onclick="openModal(this.src)" />
+        <img src="https://cdn.pixabay.com/photo/2025/05/06/06/35/app-9581862_1280.jpg" alt="Screenshot 6" class="rounded-md w-[100px] h-[200px] cursor-pointer" onclick="openModal(this.src)" />
+      </div>
+    </div>
+
+    <!-- Modal Viewer -->
+    <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-80 z-50 hidden flex items-center justify-center">
+      <div class="relative max-w-full max-h-full">
+        <img id="modalImage" src="" alt="Expanded screenshot" class="max-w-[90vw] max-h-[90vh] rounded-lg" />
+        <button onclick="closeModal()" class="absolute top-2 right-2 text-white text-2xl font-bold">&times;</button>
+      </div>
+    </div>
+
+    <script>
+      function openModal(src) {
+        document.getElementById("modalImage").src = src;
+        document.getElementById("imageModal").classList.remove("hidden");
+      }
+      function closeModal() {
+        document.getElementById("imageModal").classList.add("hidden");
+      }
+      document.getElementById("imageModal").addEventListener("click", function (e) {
+        if (e.target === this) closeModal();
+      });
+    </script>
+
+    <!-- About Section -->
 <div class="mt-6">
   <h2 class="text-lg font-medium">About this app</h2>
   <p class="text-sm mt-2 leading-relaxed">
@@ -255,4 +276,6 @@ There are lots of short TVs, dramas with different themes. You can explore popul
   </div>
   
 </div>
-</body> </html>
+
+  </body>
+</html>
